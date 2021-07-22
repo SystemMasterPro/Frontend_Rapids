@@ -1,0 +1,6 @@
+{
+    "/api": {
+        "target": "https://rapids-library-django.herokuapp.com/api/books",
+        "secure": false
+    }
+}

@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="Iam">
+                <!-- DERECHOS DE AUTOR -->
+                <p>Si Tienes</p>
+                <b>
+                    <div class="innerIam">
+                        problemas al descargar<br />
+                        con derechos de autor<br />
+                        contactate con<br />
+                        el administrador del sitio<br />
+                        GRACIAS!
+                    </div>
+                </b>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="datos">
+        <div class="row p-4 text-center">
+            <app-search-book (search)="handleSearch($event)"></app-search-book>
+            <div  *ngFor="let book of datos | searchFilter:filtro" class="col-lg-3 col-md-4 col-sm-6 col-12 p-2 animate__animated animate__fadeInTopLeft">
+                <a>
+                    <img src="{{book.image}}" class="w-100">
+                    <h3 class="title">{{book.name}}</h3>
+                    <p class="animate__animated animate__bounce">{{book.autor}}</p>
+                    <a type="button" class="btn btn-success btn-block mb-1 w-100" href="{{book.file}}"
+                        target="_blank">Descargar
+                        Gratis</a>
+                    <p type="text" class="w-100 text-public">Publicado: {{book.created}}</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

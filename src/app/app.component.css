@@ -1,0 +1,8 @@
+.online{
+    height: 5px;
+    background-color: rgb(88, 240, 101);
+}
+.ofline{
+    height: 5px;
+    background-color: rgb(218, 62, 62);
+}

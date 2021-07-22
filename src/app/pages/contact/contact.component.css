@@ -1,0 +1,24 @@
+.text{
+    color: rgb(255, 255, 255);
+    box-shadow: rgb(255, 255, 255) 0px 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container{
+    height: 100vh;
+}
+.color{
+    background-color: #4c8cf4;
+    color: white;
+    font-weight: bolder;
+}
+.color-input{
+    color: rgb(57, 165, 204);
+    font-weight: bold;
+}
+
+.icon{
+    display: inline-block;
+    text-decoration: none;
+    font-size: 40px;
+    margin-right: 10px;
+}
