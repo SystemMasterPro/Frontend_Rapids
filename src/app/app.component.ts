@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SwPush } from '@angular/service-worker';
-import { ConnectionService } from 'ngx-connection-service';
 import { ApiServiceService } from './services/api-service.service';
 
 @Component({
@@ -17,22 +16,21 @@ export class AppComponent implements OnInit {
     'BLvcrK3x_8JTNXyR30gCwsK4fnWd5Jp1XHN5AJ-fVLCMWqzxfCf92jMcgENiKtsHnCvtjGBSUSS-3OxEFbXTtig';
 
   constructor(
-    private connectionService: ConnectionService,
     private swPush: SwPush,
     private apiRest: ApiServiceService
   ) {
     // comprueba la conexion a internet
-    this.connectionService.monitor().subscribe((currentState) => {
-      this.hasNetworkConnection = currentState.hasNetworkConnection;
-      this.hasInternetAccess = currentState.hasInternetAccess;
-      if (this.hasNetworkConnection && this.hasInternetAccess) {
-        this.status = 'ONLINE';
-        // console.log("ESTAS EN LINEA");
-      } else {
-        this.status = 'OFFLINE';
-        // console.log("ESTAS FUERA DE LINEA");
-      }
-    });
+    // this.connectionService.monitor().subscribe((currentState) => {
+    //   this.hasNetworkConnection = currentState.hasNetworkConnection;
+    //   this.hasInternetAccess = currentState.hasInternetAccess;
+    //   if (this.hasNetworkConnection && this.hasInternetAccess) {
+    //     this.status = 'ONLINE';
+    //     // console.log("ESTAS EN LINEA");
+    //   } else {
+    //     this.status = 'OFFLINE';
+    //     // console.log("ESTAS FUERA DE LINEA");
+    //   }
+    // });
 
     this.subscribetoNotifications();
   }

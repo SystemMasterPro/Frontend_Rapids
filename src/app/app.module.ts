@@ -11,7 +11,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { ConnectionServiceModule } from 'ngx-connection-service';
+// import { ConnectionServiceModule } from 'ngx-connection-service';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { ConnectionServiceModule } from 'ngx-connection-service';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    ConnectionServiceModule,
+    // ConnectionServiceModule,
     FormsModule,
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
