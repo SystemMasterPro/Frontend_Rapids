@@ -1,5 +1,13 @@
+    <div class="pdfContainer container-fluid" *ngIf="state">
+        <ngx-extended-pdf-viewer [src]="'book_selector'" [useBrowserLocale]="false" [textLayer]="true"
+            [showHandToolButton]="true" [showPresentationModeButton]="true" [(page)]="page" [(pageLabel)]="pageLabel"
+            [showDownloadButton]="false" [theme]="'dark'">
+        </ngx-extended-pdf-viewer>
+        <button (click)="returnBooks()" class="buttonReturn">🔙</button>
+    </div>
 <div class="container mt-5">
-    <div class="row">
+    <span class="ir-arriba" id="ir-arriba" (click)="topPage()"><i class="fas fa-arrow-up"></i></span>
+    <div class="row" *ngIf="!state">
         <div class="col-12">
             <div class="Iam">
                 <!-- DERECHOS DE AUTOR -->
@@ -16,7 +24,7 @@
             </div>
         </div>
     </div>
-    <div *ngIf="datos">
+    <div *ngIf="!state && datos">
         <div class="row p-4 text-center">
             <app-search-book (search)="handleSearch($event)"></app-search-book>
             <div  *ngFor="let book of datos | searchFilter:filtro" class="col-lg-3 col-md-4 col-sm-6 col-12 p-2 animate__animated animate__fadeInTopLeft">
@@ -29,7 +37,10 @@
                         Gratis</a>
                     <p type="text" class="w-100 text-public">Publicado: {{book.created}}</p>
                 </a>
+                <a (click)="selectBook(book.file)" class="readBook">Leer</a>
             </div>
         </div>
     </div>
 </div>
+
+

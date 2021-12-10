@@ -6,6 +6,15 @@
 .container{
     height: 100vh;
 }
+.gridContainer{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    justify-items: center;
+}
+form{
+    width: 600px;
+}
 .color{
     background-color: #4c8cf4;
     color: white;
@@ -21,4 +30,16 @@
     text-decoration: none;
     font-size: 40px;
     margin-right: 10px;
+}
+i{
+    color: white;
+}
+i:hover{
+    color: rgba(39, 135, 202, 0.7);
+}
+
+@media(max-width:800px){
+    form{
+        width: 100%;
+    }
 }
